@@ -216,26 +216,54 @@ document.addEventListener('keydown', (e) => {
             isGamePaused ? startGame() : pauseGame();
             break;
     }
-    // 手机虚拟按键控制
-document.querySelector('.up-btn').addEventListener('click', () => {
+});
+
+// 手机虚拟按键控制（核心：兼容 iOS touchstart + 普通 click）
+function handleUp() {
     if (!isGameRunning || isGamePaused) return;
     if (direction !== 'down') nextDirection = 'up';
-});
-
-document.querySelector('.down-btn').addEventListener('click', () => {
+}
+function handleDown() {
     if (!isGameRunning || isGamePaused) return;
     if (direction !== 'up') nextDirection = 'down';
-});
-
-document.querySelector('.left-btn').addEventListener('click', () => {
+}
+function handleLeft() {
     if (!isGameRunning || isGamePaused) return;
     if (direction !== 'right') nextDirection = 'left';
-});
-
-document.querySelector('.right-btn').addEventListener('click', () => {
+}
+function handleRight() {
     if (!isGameRunning || isGamePaused) return;
     if (direction !== 'left') nextDirection = 'right';
+}
+
+// 绑定事件（同时支持 iOS 触摸和普通点击）
+const upBtn = document.querySelector('.up-btn');
+const downBtn = document.querySelector('.down-btn');
+const leftBtn = document.querySelector('.left-btn');
+const rightBtn = document.querySelector('.right-btn');
+
+upBtn.addEventListener('click', handleUp);
+upBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // 阻止iOS默认触摸行为
+    handleUp();
 });
+
+downBtn.addEventListener('click', handleDown);
+downBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    handleDown();
+});
+
+leftBtn.addEventListener('click', handleLeft);
+leftBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    handleLeft();
+});
+
+rightBtn.addEventListener('click', handleRight);
+rightBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    handleRight();
 });
 
 // 按钮事件绑定
@@ -247,5 +275,4 @@ resetBtn.addEventListener('click', () => {
 });
 
 // 页面加载时初始化
-
 window.addEventListener('load', initGame);
