@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简贪吃蛇 | Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入字体图标（仅用于按钮美化，可选） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 游戏标题区 -->
+        <div class="game-header">
+            <h1>贪吃蛇 <span>Snake Game</span></h1>
+            <div class="score-board">
+                <span class="label">分数:</span>
+                <span id="score">0</span>
+            </div>
+        </div>
+
+        <!-- 游戏画布区 -->
+        <div class="game-canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+
+        <!-- 游戏控制区 -->
+        <div class="game-controls">
+            <button id="startBtn" class="control-btn">
+                <i class="fas fa-play"></i> 开始游戏
+            </button>
+            <button id="pauseBtn" class="control-btn" disabled>
+                <i class="fas fa-pause"></i> 暂停游戏
+            </button>
+            <button id="resetBtn" class="control-btn">
+                <i class="fas fa-redo"></i> 重置游戏
+            </button>
+            <div class="control-tips">
+                <p>操作说明：方向键 ↑↓←→ 控制蛇移动</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
