@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>极简贪吃蛇 | Snake Game</title>
+    <!-- 正确引用根目录的 style.css -->
     <link rel="stylesheet" href="style.css">
-    <!-- 引入字体图标（仅用于按钮美化，可选） -->
+    <!-- 字体图标（保证按键图标显示） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -24,32 +25,35 @@
             <canvas id="gameCanvas" width="400" height="400"></canvas>
         </div>
 
-        <!-- 游戏控制区 -->
-     <div class="game-controls">
-    <button id="startBtn" class="control-btn">
-        <i class="fas fa-play"></i> 开始游戏
-    </button>
-    <button id="pauseBtn" class="control-btn" disabled>
-        <i class="fas fa-pause"></i> 暂停游戏
-    </button>
-    <button id="resetBtn" class="control-btn">
-        <i class="fas fa-redo"></i> 重置游戏
-    </button>
-    <div class="control-tips">
-        <p>电脑：方向键控制 | 手机：点击下方按键</p>
-    </div>
-    
-    <!-- 新增：手机虚拟方向键 -->
-    <div class="mobile-controls">
-        <button class="dir-btn up-btn"><i class="fas fa-chevron-up"></i></button>
-        <div class="dir-middle">
-            <button class="dir-btn left-btn"><i class="fas fa-chevron-left"></i></button>
-            <button class="dir-btn down-btn"><i class="fas fa-chevron-down"></i></button>
-            <button class="dir-btn right-btn"><i class="fas fa-chevron-right"></i></button>
+        <!-- 游戏控制区（包含手机虚拟按键） -->
+        <div class="game-controls">
+            <button id="startBtn" class="control-btn">
+                <i class="fas fa-play"></i> 开始游戏
+            </button>
+            <button id="pauseBtn" class="control-btn" disabled>
+                <i class="fas fa-pause"></i> 暂停游戏
+            </button>
+            <button id="resetBtn" class="control-btn">
+                <i class="fas fa-redo"></i> 重置游戏
+            </button>
+            <div class="control-tips">
+                <p>电脑：方向键控制 | 手机：点击下方按键</p>
+            </div>
+            
+            <!-- 手机虚拟方向键 -->
+            <div class="mobile-controls">
+                <button class="dir-btn up-btn"><i class="fas fa-chevron-up"></i></button>
+                <div class="dir-middle">
+                    <button class="dir-btn left-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="dir-btn down-btn"><i class="fas fa-chevron-down"></i></button>
+                    <button class="dir-btn right-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- 正确引用根目录的 script.js -->
     <script src="script.js"></script>
 </body>
-
 </html>
+
