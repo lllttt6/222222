@@ -140,4 +140,60 @@ body {
         padding: 0.6rem 1rem;
         font-size: 0.8rem;
     }
+
+}
+/* 手机虚拟方向键样式 */
+.mobile-controls {
+    display: none; /* 电脑端隐藏 */
+    margin-top: 1.5rem;
+    width: 180px;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dir-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dir-btn:hover {
+    background-color: #2980b9;
+}
+
+.dir-middle {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* 手机端显示虚拟按键，优化布局 */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    #gameCanvas {
+        width: 300px;
+        height: 300px;
+    }
+
+    .mobile-controls {
+        display: flex; /* 手机端显示虚拟按键 */
+    }
+
+    .control-tips {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
 }
