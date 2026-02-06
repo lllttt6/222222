@@ -98,6 +98,9 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    /* iOS 按钮优化 */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .control-btn:disabled {
@@ -125,23 +128,6 @@ body {
     color: #7f8c8d;
 }
 
-/* 响应式适配（小屏幕优化） */
-@media (max-width: 480px) {
-    .game-container {
-        padding: 1.5rem;
-    }
-
-    #gameCanvas {
-        width: 320px;
-        height: 320px;
-    }
-
-    .control-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-    }
-
-}
 /* 手机虚拟方向键样式 */
 .mobile-controls {
     display: none; /* 电脑端隐藏 */
@@ -165,6 +151,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* 核心：iOS 触摸优化 */
+    -webkit-tap-highlight-color: transparent; /* 去掉点击灰色高亮 */
+    touch-action: manipulation; /* 禁用双击缩放，加速响应 */
 }
 
 .dir-btn:hover {
@@ -176,10 +165,10 @@ body {
     gap: 0.5rem;
 }
 
-/* 手机端显示虚拟按键，优化布局 */
+/* 响应式适配（小屏幕优化） */
 @media (max-width: 480px) {
     .game-container {
-        padding: 1rem;
+        padding: 1.5rem;
         margin: 0.5rem;
     }
 
