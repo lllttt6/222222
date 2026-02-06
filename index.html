@@ -25,22 +25,31 @@
         </div>
 
         <!-- 游戏控制区 -->
-        <div class="game-controls">
-            <button id="startBtn" class="control-btn">
-                <i class="fas fa-play"></i> 开始游戏
-            </button>
-            <button id="pauseBtn" class="control-btn" disabled>
-                <i class="fas fa-pause"></i> 暂停游戏
-            </button>
-            <button id="resetBtn" class="control-btn">
-                <i class="fas fa-redo"></i> 重置游戏
-            </button>
-            <div class="control-tips">
-                <p>操作说明：方向键 ↑↓←→ 控制蛇移动</p>
-            </div>
+     <div class="game-controls">
+    <button id="startBtn" class="control-btn">
+        <i class="fas fa-play"></i> 开始游戏
+    </button>
+    <button id="pauseBtn" class="control-btn" disabled>
+        <i class="fas fa-pause"></i> 暂停游戏
+    </button>
+    <button id="resetBtn" class="control-btn">
+        <i class="fas fa-redo"></i> 重置游戏
+    </button>
+    <div class="control-tips">
+        <p>电脑：方向键控制 | 手机：点击下方按键</p>
+    </div>
+    
+    <!-- 新增：手机虚拟方向键 -->
+    <div class="mobile-controls">
+        <button class="dir-btn up-btn"><i class="fas fa-chevron-up"></i></button>
+        <div class="dir-middle">
+            <button class="dir-btn left-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="dir-btn down-btn"><i class="fas fa-chevron-down"></i></button>
+            <button class="dir-btn right-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
-
+</div>
     <script src="script.js"></script>
 </body>
+
 </html>
