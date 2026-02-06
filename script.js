@@ -216,6 +216,26 @@ document.addEventListener('keydown', (e) => {
             isGamePaused ? startGame() : pauseGame();
             break;
     }
+    // 手机虚拟按键控制
+document.querySelector('.up-btn').addEventListener('click', () => {
+    if (!isGameRunning || isGamePaused) return;
+    if (direction !== 'down') nextDirection = 'up';
+});
+
+document.querySelector('.down-btn').addEventListener('click', () => {
+    if (!isGameRunning || isGamePaused) return;
+    if (direction !== 'up') nextDirection = 'down';
+});
+
+document.querySelector('.left-btn').addEventListener('click', () => {
+    if (!isGameRunning || isGamePaused) return;
+    if (direction !== 'right') nextDirection = 'left';
+});
+
+document.querySelector('.right-btn').addEventListener('click', () => {
+    if (!isGameRunning || isGamePaused) return;
+    if (direction !== 'left') nextDirection = 'right';
+});
 });
 
 // 按钮事件绑定
@@ -227,4 +247,5 @@ resetBtn.addEventListener('click', () => {
 });
 
 // 页面加载时初始化
+
 window.addEventListener('load', initGame);
